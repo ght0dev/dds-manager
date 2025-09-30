@@ -54,14 +54,15 @@ uv sync
 ```
 source .venv/bin/activate
 ```
-
+Выполнить миграции
 ```python manage.py migrate```
+
 Создать суперпользователя (для админки)
-
 ```python manage.py createsuperuser```
-Запустить сервер
 
+Запустить сервер
 ```python manage.py runserver```
+
 Открыть приложение
 Перейти в браузере по адресу: ```http://127.0.0.1:8000/```
 
