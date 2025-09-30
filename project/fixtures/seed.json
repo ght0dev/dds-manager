@@ -1,0 +1,13 @@
+[
+  {"model": "transactions.type", "pk": 1, "fields": {"name": "Пополнение", "description": ""}},
+  {"model": "transactions.type", "pk": 2, "fields": {"name": "Списание", "description": ""}},
+  {"model": "transactions.status", "pk": 1, "fields": {"name": "Бизнес", "description": ""}},
+  {"model": "transactions.status", "pk": 2, "fields": {"name": "Личное", "description": ""}},
+  {"model": "transactions.status", "pk": 3, "fields": {"name": "Налог", "description": ""}},
+  {"model": "transactions.category", "pk": 1, "fields": {"name": "Инфраструктура", "type": 2, "description": ""}},
+  {"model": "transactions.subcategory", "pk": 1, "fields": {"name": "VPS", "category": 1, "description": ""}},
+  {"model": "transactions.subcategory", "pk": 2, "fields": {"name": "Proxy", "category": 1, "description": ""}},
+  {"model": "transactions.category", "pk": 2, "fields": {"name": "Маркетинг", "type": 2, "description": ""}},
+  {"model": "transactions.subcategory", "pk": 3, "fields": {"name": "Farpost", "category": 2, "description": ""}},
+  {"model": "transactions.subcategory", "pk": 4, "fields": {"name": "Avito", "category": 2, "description": ""}}
+]
