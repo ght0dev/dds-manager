@@ -38,53 +38,74 @@
 ## Установка и запуск
 
 1. **Клонировать репозиторий**
-```bash
-git clone https://github.com/username/dds-manager.git
+
+```
+git clone https://github.com/ght0dev/dds-manager.git
 cd dds-manager
-Создать виртуальное окружение и установить зависимости
+```
 
-bash
-Copy code
-python -m venv .venv
-source .venv/bin/activate  # Linux/macOS
-# .venv\Scripts\activate  # Windows
-pip install -r requirements.txt
-Применить миграции
+запустить uv 
 
-bash
-Copy code
+```
+uv sync
+```
+
+активировать окружение 
+```
+source .venv/bin/activate
+```
+
 python manage.py migrate
 Создать суперпользователя (для админки)
 
-bash
-Copy code
 python manage.py createsuperuser
 Запустить сервер
 
-bash
-Copy code
 python manage.py runserver
 Открыть приложение
 Перейти в браузере по адресу: http://127.0.0.1:8000/
 
 Структура проекта
-css
-Copy code
-dds-manager/
-├─ project/
-│  ├─ settings.py
-│  ├─ urls.py
-│  └─ ...
-├─ transactions/
-│  ├─ models.py
-│  ├─ views.py
-│  ├─ serializers.py
-│  └─ templates/
-│     └─ transactions/
-│        ├─ list.html
-│        └─ form.html
-└─ manage.py
+```
+├── project
+│   ├── api
+│   │   ├── __init__.py
+│   │   └── urls.py
+│   ├── core
+│   │   ├── asgi.py
+│   │   ├── __init__.py
+│   │   ├── settings
+│   │   │   ├── base.py
+│   │   │   └── dev.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── fixtures
+│   │   └── seed.json
+│   ├── manage.py
+│   ├── static
+│   │   └── js
+│   │       ├── form.js
+│   │       └── transactions.js
+│   ├── templates
+│   │   └── transactions
+│   │       ├── form.html
+│   │       └── list.html
+│   └── transactions
+│       ├── admin.py
+│       ├── apps.py
+│       ├── filters.py
+│       ├── __init__.py
+│       ├── models.py
+│       ├── serializers.py
+│       ├── tests.py
+│       ├── urls.py
+│       └── views.py
+├── pyproject.toml
+├── README.md
+└── uv.lock
+```
 API Endpoints (DRF)
+```
 Endpoint	Method	Описание
 /api/transactions/	GET	Список транзакций с пагинацией
 /api/transactions/	POST	Создание транзакции
@@ -95,9 +116,6 @@ Endpoint	Method	Описание
 /api/categories/	GET	Список категорий (фильтр по типу)
 /api/subcategories/	GET	Список подкатегорий (фильтр по категории)
 /api/statuses/	GET	Список статусов
-
+```
 Лицензия
 MIT License © 2025
-
-yaml
-Copy code
